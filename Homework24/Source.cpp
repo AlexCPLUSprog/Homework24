@@ -35,7 +35,7 @@ void resize_arr(T*& arr, int &length, int &length2) {
 		if (length2 < length){
 		T* tmp = new T[length2];	
 		for (int i = 0; i < length2; i++) {
-			tmp[i] = arr[i];	// здесь компилятор ругался, что идет переполнение буфера в tmp
+			tmp[i] = arr[i];	
 		}
 	delete[] arr;	
 	arr = tmp;
@@ -77,7 +77,7 @@ int main() {
 	cout << "Задача 2.\nВведите вторую длину массива(изначальная 10):";
 	int len1 = 10,len2;
 	cin >> len2;
-	int* K = new int[len2];
+	int* K = new int[len1];	// Исправлено с len2 на len1
 	fill_arr(K, len1, 5, 30);
 	cout << "Изначальный массив:\n";
 	show_arr(K, len1);
